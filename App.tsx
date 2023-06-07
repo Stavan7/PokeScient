@@ -1,20 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import HomeScreen from './app/screens/HomeScreen'
 
 const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text>PokeScient</Text>
-    </View>
-  )
+  return <HomeScreen />
 }
 
 export default App
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-})
