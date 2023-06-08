@@ -23,7 +23,7 @@ const HomeScreen = ({ }) => {
                     const moves = pokemonData.moves.map((move) => move.move.name);
                     return {
                         name: pokemon.name,
-                        image: pokemonData.sprites.front_shiny,
+                        image: pokemonData.sprites.other.home.front_default,
                         moves: moves,
                         types: types
                     };

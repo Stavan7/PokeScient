@@ -41,7 +41,7 @@ export default PokeCard
 const styles = StyleSheet.create({
     card: {
         padding: 5,
-        opacity: 0.75,
+        opacity: 0.78,
         width: '47%',
         borderRadius: 10,
         shadowOffset: {
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     },
     image: {
         height: 140,
+        marginBottom: 20,
         resizeMode: 'contain'
     },
     typesContainer: {
