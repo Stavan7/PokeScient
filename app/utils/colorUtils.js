@@ -37,6 +37,49 @@ export const getTypeColor = type => {
     case 'fairy':
       return '#ef98ac';
     default:
-      return '#ffffff'; // Default background color if type is not recognized
+      return '#ffffff';
+  }
+};
+
+export const getBackgroundColor = type => {
+  switch (type) {
+    case 'fire':
+      return '#FFBD8E';
+    case 'normal':
+      return '#D1D094';
+    case 'fighting':
+      return '#EF7B74';
+    case 'water':
+      return '#9FBBFD';
+    case 'flying':
+      return '#CBBDF8';
+    case 'grass':
+      return '#A9DB90';
+    case 'poison':
+      return '#D685D6';
+    case 'electric':
+      return '#FDE99C';
+    case 'ground':
+      return '#FFEAB1';
+    case 'psychic':
+      return '#EF9DB5';
+    case 'rock':
+      return '#DFD299';
+    case 'ice':
+      return '#CDF6F6';
+    case 'bug':
+      return '#DAE673';
+    case 'dragon':
+      return '#BCA0FF';
+    case 'ghost':
+      return '#AD89E8';
+    case 'dark':
+      return '#B89277';
+    case 'steel':
+      return '#E4E6FF';
+    case 'fairy':
+      return '#FFC5D3';
+    default:
+      return '#FFFFFF';
   }
 };

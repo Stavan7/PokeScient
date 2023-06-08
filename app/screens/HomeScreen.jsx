@@ -9,7 +9,7 @@ import Header from "../components/Header";
 import PokeCard from "../components/PokeCard";
 import { fetchPokemonData, fetchPokemonList } from "../api/pokeApi";
 
-const HomeScreen = ({ }) => {
+const HomeScreen = ({ navigation }) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -54,7 +54,7 @@ const HomeScreen = ({ }) => {
 
     return (
         <View style={styles.container}>
-            <Header headerText={'POKE`SCIENT'} />
+            <Header headerText={'POKESCIENT'} />
             <FlatList
                 data={data}
                 numColumns={2}
@@ -65,7 +65,7 @@ const HomeScreen = ({ }) => {
                 keyExtractor={(item) => item.name}
                 showsVerticalScrollIndicator={false}
                 columnWrapperStyle={styles.columnWrapper}
-                renderItem={({ item }) => <PokeCard data={item} />}
+                renderItem={({ item }) => <PokeCard data={item} navigation={navigation} />}
             />
         </View>
     );
@@ -74,7 +74,7 @@ const HomeScreen = ({ }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white'
+        backgroundColor: '#f5f5f7'
     },
     header: {
         fontSize: 26,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    }
+    },
 });
 
 export default HomeScreen;

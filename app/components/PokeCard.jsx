@@ -6,18 +6,14 @@ import {
     Image,
     TouchableOpacity,
 } from "react-native";
-import { getTypeColor } from '../utils/colorUtils';
+import { getTypeColor, getBackgroundColor } from '../utils/colorUtils';
 
-const PokeCard = ({ data }) => {
+const PokeCard = ({ data, navigation }) => {
     return (
         <TouchableOpacity
-            activeOpacity={0.9}
-            style={[styles.card,
-            {
-                backgroundColor: getTypeColor(data.types[0]),
-                shadowColor: getTypeColor(data.types[0])
-            }]}
-        >
+            activeOpacity={1}
+            onPress={() => navigation.navigate('Details', { details: data })}
+            style={[styles.card, { backgroundColor: getBackgroundColor(data.types[0]) }]}  >
             <Text style={styles.name}>{data.name}</Text>
             <Image
                 style={styles.image}
@@ -41,17 +37,8 @@ export default PokeCard
 const styles = StyleSheet.create({
     card: {
         padding: 5,
-        opacity: 0.78,
         width: '47%',
         borderRadius: 10,
-        shadowOffset: {
-            width: 20,
-            height: 30
-        },
-        backfaceVisibility: 'visible',
-        shadowOpacity: 0.57,
-        shadowRadius: 14,
-        elevation: 23,
     },
     box: {
         padding: 5,
@@ -60,8 +47,8 @@ const styles = StyleSheet.create({
     },
     name: {
         fontSize: 16,
-        color: 'black',
         marginTop: 5,
+        color: '#1d1d1f',
         textAlign: 'center',
         fontWeight: "500",
         textTransform: "capitalize",
@@ -80,11 +67,11 @@ const styles = StyleSheet.create({
     type: {
         width: 70,
         padding: 5,
-        color: 'black',
         fontSize: 14,
+        color: '#1d1d1f',
         textAlign: 'center',
         fontWeight: '500',
-        borderRadius: 16,
+        borderRadius: 12,
         textTransform: "capitalize"
     }
 })
